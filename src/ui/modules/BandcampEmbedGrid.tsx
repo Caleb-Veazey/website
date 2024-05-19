@@ -1,14 +1,9 @@
 // next/src/ui/modules/BandcampEmbedGrid.tsx
 import React from 'react';
 import BandcampEmbed from './BandcampEmbed';
-import { Image } from 'next-sanity/image';
 
 type BandcampEmbedGridProps = {
-  albums?: {
-    title: string;
-    bandcampEmbedUrl: string;
-    albumArtwork: typeof Image;
-  }[];
+  albums?: Sanity.Album[];
 };
 
 const BandcampEmbedGrid: React.FC<BandcampEmbedGridProps> = ({ albums }) => {
