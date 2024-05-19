@@ -27,14 +27,14 @@ export default function MobileNavigation({ menu, ctas }: MobileNavigationProps) 
   return (
     <>
       <button
-        className="md:hidden fixed bottom-3 right-3 z-50 rounded-md p-2 border border-black"
+        className="md:hidden fixed text-black bottom-3 right-3 z-50 rounded-md p-2 border border-black"
         onClick={toggleMobileMenu}
       >
         {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
       </button>
       <div
         className={cn(
-          'fixed inset-0 z-40 flex flex-col items-center justify-center bg-white transition-opacity duration-300',
+          'fixed inset-0 z-40 flex flex-col items-center justify-center bg-white text-black  transition-opacity duration-300',
           isMobileMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
         )}
       >

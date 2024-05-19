@@ -70,7 +70,20 @@ declare global {
 		type Module<T = {}> = {
 			_type: string
 			_key: string
+			albums?: Album[]; // Add this line
 		} & T
+
+		type Album = SanityDocument & {
+      title: string;
+      bandcampEmbedCode: string;
+      bandcampEmbedUrl: string;
+      releaseDate: string;
+      albumArtwork: Image;
+      convertkitPurchaseUrl?: string;
+      appleMusicAlbumUrl?: string;
+      spotifyAlbumUrl?: string;
+      // Add other relevant fields
+    };
 	}
 }
 

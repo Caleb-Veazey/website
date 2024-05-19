@@ -40,6 +40,12 @@ async function getPage(params: Props['params']) {
 						internal->{ title, metadata }
 					}
 				},
+        albums[]->{
+          ...,
+          albumArtwork{
+            ...,
+          },
+        },
 				modules[]{
 					...,
 					ctas[]{
