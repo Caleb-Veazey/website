@@ -7,7 +7,7 @@ type BandcampEmbedGridProps = {
   albums?: {
     title: string;
     bandcampEmbedUrl: string;
-    albumArtwork: Image;
+    albumArtwork: typeof Image;
   }[];
 };
 
