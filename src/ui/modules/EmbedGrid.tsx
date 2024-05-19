@@ -1,7 +1,7 @@
 // next/src/ui/modules/EmbedGrid.tsx
 import React from 'react';
 import BandcampEmbed from './BandcampEmbed';
-import YouTubeEmbed from './YoutubeEmbed';
+import YouTubeEmbed from './YouTubeEmbed';
 
 type EmbedGridProps = {
   albums?: Sanity.Album[];
