@@ -46,6 +46,12 @@ async function getPage(params: Props['params']) {
             ...,
           },
         },
+				youTubeVideos[]->{
+          _id,
+          title,
+          videoId,
+          // Add other relevant fields
+        },
 				modules[]{
 					...,
 					ctas[]{

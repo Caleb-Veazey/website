@@ -12,9 +12,11 @@ const BandcampEmbedGrid: React.FC<BandcampEmbedGridProps> = ({ albums }) => {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32 mx-8 mt-8 xl:max-w-6xl xl:mx-auto">
       {albums.map((album, index) => (
-        <BandcampEmbed key={index} album={album} />
+        <div className="h-[125vw] md:h-[65vw] lg:h-128 xl:h-144">
+          <BandcampEmbed key={index} album={album} />
+        </div>
       ))}
     </div>
   );

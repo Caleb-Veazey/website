@@ -12,7 +12,7 @@ const BandcampEmbed: React.FC<BandcampEmbedProps> = ({ album }) => {
   }
   
   return (
-    <div className="mx-4 mt-8 h-[125vw] md:h-[65vw] lg:h-128 xl:h-144">
+    <>
       <h2 className="text-2xl font-bold mb-4">{album.title}</h2>
       <iframe
         style={{ border: 0, width: '100%', height: '100%' }}
@@ -20,7 +20,7 @@ const BandcampEmbed: React.FC<BandcampEmbedProps> = ({ album }) => {
         seamless
       >  
       </iframe>
-    </div>
+    </>
   );
 };
 

@@ -6,6 +6,7 @@ import HeroCentered from './HeroCentered'
 import HeroPostcard from './HeroPostcard'
 import HomePageModule from './HomePageModule'
 import BandcampEmbedGrid from './BandcampEmbedGrid'
+import EmbedGrid from './EmbedGrid'
 
 export default function Modules({ modules }: { modules?: Sanity.Module[] }) {
 	return (
@@ -28,6 +29,8 @@ export default function Modules({ modules }: { modules?: Sanity.Module[] }) {
 						return <HomePageModule {...module} key={module._key} />
 					case 'bandcampEmbedGrid':
   					return <BandcampEmbedGrid albums={module.albums} key={module._key} />;
+					case 'embedGrid':
+            return <EmbedGrid key={module._key} albums={module.albums} youTubeVideos={module.youTubeVideos} embedStyle={module.embedStyle} />;
 
 					default:
 						return <div data-type={module._type} key={module._key} />

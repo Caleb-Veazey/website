@@ -70,7 +70,9 @@ declare global {
 		type Module<T = {}> = {
 			_type: string
 			_key: string
-			albums?: Album[]; // Add this line
+			albums?: Album[]
+			youTubeVideos?: YouTubeVideo[]
+			embedStyle?: 'portrait' | 'landscape'
 		} & T
 
 		type Album = SanityDocument & {
@@ -82,6 +84,11 @@ declare global {
       convertkitPurchaseUrl?: string;
       appleMusicAlbumUrl?: string;
       spotifyAlbumUrl?: string;
+      // Add other relevant fields
+		};
+		
+		type YouTubeVideo = {
+      videoId: string;
       // Add other relevant fields
     };
 	}
