@@ -14,10 +14,11 @@ const EmbedGrid: React.FC<EmbedGridProps> = ({ albums, youTubeVideos, embedStyle
     return null; // or return a loading state or placeholder
   }
 
-  const aspectRatio = embedStyle === 'portrait' ? 'h-[125vw] md:h-[65vw] lg:h-128 xl:h-144' : 'h-[55vw] md:h-[35vw] lg:h-56';
+  const aspectRatio = embedStyle === 'portrait' ? 'h-[125vw] md:h-[65vw] lg:h-128 xl:h-144' : 'h-[55vw] md:h-[75vw] lg:h-96';
+  const gridStyles = embedStyle === 'portrait' ? 'md:grid-cols-2 lg:grid-cols-3': 'lg:grid-cols-2'
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32 m-8 xl:max-w-6xl xl:mx-auto">
+    <div className={`grid grid-cols-1 ${gridStyles} gap-8 mb-32 m-8 xl:max-w-6xl xl:mx-auto`}>
       {albums?.map((album, index) => (
         <div key={index} className={aspectRatio}>
           <BandcampEmbed album={album} />
