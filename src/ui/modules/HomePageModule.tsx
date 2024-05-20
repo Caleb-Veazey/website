@@ -20,7 +20,7 @@ export default function HomePageModule({
   videoLink: string
 }>) {
   return (
-    <section className="pb-48 md:flex max-w-screen-2xl mx-auto">
+    <section className="pb-48 md:pb-16 md:flex max-w-screen-2xl mx-auto">
       <div className="text-white px-3 pb-7 flex flex-col text-center md:text-center items-center md:items-center gap-2 md:w-5/12 md:justify-center">
         <div className="text-5xl font-normal [text-shadow:1px_1px_8px_rgba(0,0,0,0.8)]">
           {title}
