@@ -2,6 +2,7 @@
 'use client'
 
 import { useState } from 'react'
+import ConvertKitMailingList from '@/ui/ConvertKitMailingList'
 import CTA from '@/ui/CTA'
 import LinkList from '@/ui/header/LinkList'
 import CTAList from '@/ui/CTAList'
@@ -11,9 +12,10 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 type MobileNavigationProps = {
   menu: (Sanity.Link | Sanity.LinkList)[] | undefined
   ctas: Sanity.CTA[]
+  convertKitMailingList: Sanity.Site['convertKitMailingList']
 }
 
-export default function MobileNavigation({ menu, ctas }: MobileNavigationProps) {
+export default function MobileNavigation({ menu, ctas, convertKitMailingList }: MobileNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const toggleMobileMenu = () => {
@@ -25,7 +27,16 @@ export default function MobileNavigation({ menu, ctas }: MobileNavigationProps) 
   }
 
   return (
-    <>
+    <footer className="flex justify-between">
+      {convertKitMailingList && (
+        <div className="md:hidden">
+          <ConvertKitMailingList
+            linkText={convertKitMailingList.linkText}
+            scriptSrc={convertKitMailingList.scriptSrc}
+            className="text-3xl text-blue-500 underline"
+          />
+        </div>
+        )}
       <button
         className="md:hidden fixed text-black bottom-3 right-3 z-50 rounded-md p-2 border border-black"
         onClick={toggleMobileMenu}
@@ -51,7 +62,8 @@ export default function MobileNavigation({ menu, ctas }: MobileNavigationProps) 
           })}
         </nav>
         <CTAList className="mt-8" ctas={ctas} />
+        
       </div>
-    </>
+    </footer>
   )
 }

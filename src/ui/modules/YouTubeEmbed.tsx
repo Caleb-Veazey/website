@@ -6,7 +6,6 @@ type YouTubeEmbedProps = {
 };
 
 const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ video }) => {
-  console.log(video);
   if (!video) {
     return null; // or return a loading state or placeholder
   }

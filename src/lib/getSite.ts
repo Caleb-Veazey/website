@@ -5,6 +5,10 @@ export default async function getSite() {
 		groq`
 			*[_type == 'site'][0]{
 				...,
+				convertKitMailingList{
+          linkText,
+          scriptSrc
+        },
 				menu[]{
 					...,
 					internal->{ _type, title, metadata },
