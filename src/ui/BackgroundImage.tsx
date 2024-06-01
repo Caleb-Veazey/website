@@ -24,10 +24,9 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({ image, alt = '' }) =>
     <div className="fixed inset-0 bg-white z-[-1]">
       <Image
 				src={imageUrl}
-				className="opacity-90"
+				className="opacity-90 object-cover"
         alt={alt}
         fill
-        objectFit="cover"
         quality={75}
         priority
       />

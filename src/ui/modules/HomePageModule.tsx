@@ -1,5 +1,6 @@
 // ui/modules/HomePageModule.tsx
 import Image from 'next/image'
+import Link from 'next/link';
 import { FaPlay } from "react-icons/fa";
 import { PortableText } from '@portabletext/react'
 import Img from '../Img'
@@ -52,12 +53,22 @@ export default function HomePageModule({
           </div>
         )}
         <div className="w-28 h-28 -bottom-14 right-0 absolute justify-start items-start gap-2.5 inline-flex">
-          <a
-            className="grow shrink basis-0 self-stretch bg-slate-500 rounded-full border-2 border-slate-500 flex place-items-center"
-            href={videoLink || "#"}
-          >
-            <FaPlay className="w-10 h-10 mx-auto fill-white" />
-					</a>
+          {videoLink ? (
+            <a
+              className="grow shrink basis-0 self-stretch bg-slate-500 rounded-full border-2 border-slate-500 flex place-items-center"
+              href={videoLink || "#"}
+            >
+              <FaPlay className="w-10 h-10 mx-auto fill-white" />
+            </a>
+          ) : (
+            <Link
+              className="grow shrink basis-0 self-stretch bg-slate-500 rounded-full border-2 border-slate-500 flex place-items-center"
+              href="/discography"
+            >
+              <FaPlay className="w-10 h-10 mx-auto fill-white" />
+            </Link>
+          )}
+          
         </div>
       </div>
       
